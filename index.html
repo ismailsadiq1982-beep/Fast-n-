@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ultimate Personal Blog</title>
+
+<style>
+:root{
+    --main:#28a745;
+    --bg:#f4f4f4;
+    --text:#000;
+}
+
+body{
+    margin:0;
+    font-family:'Segoe UI', sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    transition:0.4s;
+}
+
+/* DARK MODE */
+.dark{
+    --bg:#121212;
+    --text:#fff;
+}
+
+/* HEADER */
+header{
+    background:linear-gradient(45deg,#28a745,#00c851);
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* NAV */
+nav{
+    display:flex;
+    justify-content:center;
+    background:#222;
+    padding:10px;
+}
+nav a{
+    color:white;
+    margin:0 15px;
+    text-decoration:none;
+}
+nav a:hover{
+    color:#28a745;
+}
+
+/* BUTTON */
+.toggle{
+    position:fixed;
+    top:10px;
+    right:10px;
+    background:#000;
+    color:white;
+    padding:10px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+/* HERO */
+.hero{
+    background:url('https://images.unsplash.com/photo-1572441713132-51c75654db73') center/cover;
+    height:250px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:22px;
+}
+
+/* SECTION */
+.section{
+    padding:30px;
+    text-align:center;
+    animation:fadeIn 1s ease;
+}
+
+/* PROFILE */
+.profile img{
+    width:200px;
+    border-radius:15px;
+}
+
+/* FRUITS */
+.fruits{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+.card{
+    background:white;
+    padding:15px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+.card:hover{
+    transform:scale(1.05);
+}
+.card img{
+    width:100%;
+    border-radius:10px;
+}
+
+/* CONTACT */
+input, textarea{
+    width:80%;
+    padding:10px;
+    margin:10px;
+}
+button{
+    background:var(--main);
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:5px;
+}
+
+/* FOOTER */
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:10px;
+}
+
+/* ANIMATION */
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(20px);}
+    to{opacity:1;transform:translateY(0);}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="toggle" onclick="toggleMode()">🌙</div>
+
+<header>
+    <h1>FRESH N FAST FRUIT SALAD 🌐</h1>
+    <p>Welcome to my professional portfolio</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Me</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<div class="hero">
+    Welcome to fresh N fast fruit salad 🍉
+</div>
+
+<!-- HOME -->
+<section class="section profile" id="home">
+    <h2>Home</h2>
+    <p>Hello! I'm a Software Engineering student.</p>
+
+    <img src="COS1302.jpg">
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+    <h2>About Me</h2>
+    <p>
+        My name is [Ismail sadiq]. I build websites and apps.
+        I love coding and solving problems.
+    </p>
+</section>
+
+<!-- FRUITS -->
+<section class="section">
+    <h2>Favorite Fruits 🍓🍍</h2>
+
+    <div class="fruits">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce">
+            <h3>Apple</h3>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1574226516831-e1dff420e37f">
+            <h3>Fruit Mix</h3>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea">
+            <h3>Berries</h3>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1582515073490-dc0a5f6d3c52">
+            <h3>Pineapple</h3>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+    <h2>Contact Me</h2>
+
+    <input placeholder="Your Name"><br>
+    <input placeholder="Your Email"><br>
+    <textarea placeholder="Your Message"></textarea><br>
+
+    <button>Send Message</button>
+
+    <p>📞 09164617678</p>
+</section>
+
+<!-- FUTB -->
+<section class="section">
+    <h2>My Website</h2>
+    <div style="text-align:center; margin:20px;">
+
+<button onclick="order()">Order via WhatsApp</button>
+</div>
+
+<a class="whatsapp" href="#"></a>
+
+    <a href="https"://freshnfast.netlify.app target="_blank">
+        Visit Freah n fast Website
+    </a>
+</section>
+
+<footer>
+    <p>© 2026 FRESH N FAST</p>
+</footer>
+
+<script>
+function toggleMode(){
+    document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>
+
