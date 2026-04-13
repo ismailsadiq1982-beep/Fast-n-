@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fresh N Fast Fruit Salad</title>
+
+<style>
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background:#f4f4f4;
+}
+
+/* HEADER */
+header{
+    background:#28a745;
+    color:white;
+    padding:15px;
+    text-align:center;
+}
+
+/* NAV */
+nav{
+    display:flex;
+    justify-content:center;
+    background:#111;
+    padding:10px;
+}
+nav a{
+    color:white;
+    margin:0 15px;
+    text-decoration:none;
+}
+nav a:hover{
+    color:#28a745;
+}
+
+/* HERO */
+.hero{
+    background:url('https://images.unsplash.com/photo-1572441713132-51c75654db73') center/cover;
+    height:300px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    text-align:center;
+}
+.hero h1{
+    background:rgba(0,0,0,0.5);
+    padding:10px;
+    border-radius:10px;
+}
+
+/* HOME IMAGE */
+.ceo{
+    text-align:center;
+    padding:30px;
+}
+.ceo img{
+    width:250px;
+    border-radius:20px;
+}
+
+/* MENU */
+.menu{
+    padding:30px;
+}
+.menu-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+.card{
+    background:white;
+    padding:15px;
+    border-radius:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    text-align:center;
+}
+.card img{
+    width:100%;
+    border-radius:10px;
+}
+
+/* CONTACT */
+.contact{
+    padding:30px;
+    text-align:center;
+}
+input, textarea{
+    width:80%;
+    padding:10px;
+    margin:10px;
+}
+button{
+    background:#28a745;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:5px;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    padding:15px;
+    border-radius:50%;
+    text-decoration:none;
+    font-size:20px;
+}
+
+/* FOOTER */
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h2>Fresh N Fast Fruit Salad 🍓</h2>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#ú">Contact</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Fresh • Healthy • Fast Delivery 🍉</h1>
+</div>
+
+<!-- CEO IMAGE -->
+<div class="ceo">
+    <h2>Our CEO</h2>
+
+    <!-- SAKA HOTONKA NAN -->
+    <img src="photo.jpg">
+
+    <h3>Zulkifilu Munir</h3>
+</div>
+
+<!-- MENU -->
+<section class="menu" id="menu">
+    <h2 style="text-align:center;">Our Menu</h2>
+
+    <div class="card">
+    <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce">
+    <h3>Classic Mix</h3>
+    <button onclick="addToCart('Classic Mix')">Add to Cart</button>
+</div>
+
+<div class="card">
+    <img src="https://images.unsplash.com/photo-1574226516831-e1dff420e37f">
+    <h3>Tropical Mix</h3>
+    <button onclick="addToCart('Tropical Mix')">Add to Cart</button>
+</div>
+
+<div class="card">
+    <img src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea">
+    <h3>Berry Mix</h3>
+    <button onclick="addToCart('Berry Mix')">Add to Cart</button>
+</div>
+       
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <h2>Contact Us</h2>
+
+    <input type="text" placeholder="Your Name"><br>
+    <input type="email" placeholder="Your Email"><br>
+    <textarea placeholder="Your Message"></textarea><br>
+
+    <button>Send Message</button>
+
+    <p>📞 09164617678</p>
+    <p>📍 Katsina state, Mani local Govermant</p>
+</section>
+
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/2349000000000">💬</a>
+<div style="text-align:center; margin:20px;">
+    <button onclick="sendOrder()">Order Now via WhatsApp</button>
+</div>
+<footer>
+    <p>© 2026 Fresh N Fast Fruit Salad</p>
+</footer>
+<script>
+let cart = [];
+
+function addToCart(item){
+    cart.push(item);
+    alert(item + " added to cart!");
+}
+
+function sendOrder(){
+    let message = "Hello, I want to order:\n" + cart.join(", ");
+    let phone = "2349164617678";
+    let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+    window.open(url, "_blank");
+}
+</script>
+</body>
+</html>
